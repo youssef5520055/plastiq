@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-graphite: #111315;
+  --color-carbon: #181B1F;
+  --color-soft-white: #F7F8FA;
+  --color-pure-white: #FFFFFF;
+  --color-industrial-gray: #737981;
+  --color-light-gray: #E8EAED;
+  --color-primary-blue: #2563EB;
+  --color-electric-blue: #38BDF8;
+  --color-cyan: #06B6D4;
+  --color-success-green: #22C55E;
+
+  --font-sans: var(--font-inter), var(--font-ibm-plex), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Base styles for dark/light mode */
+@layer base {
+  :root {
+    --background: var(--color-soft-white);
+    --foreground: var(--color-graphite);
+  }
+  
+  .dark {
+    --background: var(--color-graphite);
+    --foreground: var(--color-soft-white);
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}

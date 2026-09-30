@@ -59,7 +59,7 @@ export function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
-              className="bg-pure-white dark:bg-graphite rounded-2xl p-6 shadow-sm border border-light-gray dark:border-white/5 flex flex-col"
+              className="block-card p-6 flex flex-col"
             >
               <div className="flex mb-4">
                 {Array.from({ length: t.rating }).map((_, j) => (

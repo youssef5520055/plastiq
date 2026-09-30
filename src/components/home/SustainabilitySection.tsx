@@ -72,7 +72,7 @@ export function SustainabilitySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 + i * 0.1 }}
-                className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/8 transition-colors"
+                className="block-card p-5 !bg-carbon !border-pure-white/20"
               >
                 <m.icon className={`w-6 h-6 ${m.color} mb-3`} />
                 <div className={`text-3xl font-black ${m.color} mb-1`}>{m.valueEn}</div>

@@ -1,8 +1,13 @@
-# PLASTIQ 🏭
+﻿# PLASTIQ ðŸ­
 
 > **Engineered Plastic. Built for What's Next.**
 
 ![PLASTIQ Dashboard](docs/screenshot.png)
+
+[![Live Deployment](https://img.shields.io/badge/Live_Deployment-Vercel-000000?style=for-the-badge&logo=vercel)](https://plastiq-umber.vercel.app)
+
+## 🚀 Live Demo
+**Experience the live application here:** [https://plastiq-umber.vercel.app](https://plastiq-umber.vercel.app)
 
 ## Overview
 PLASTIQ is a B2B plastics manufacturing application. We've completely redesigned the UI/UX using a modern, energetic, block-based design system that conveys industrial strength while remaining approachable and vibrant.
@@ -18,3 +23,4 @@ PLASTIQ is a B2B plastics manufacturing application. We've completely redesigned
 npm install
 npm run dev
 `
+

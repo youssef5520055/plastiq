@@ -31,16 +31,16 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-graphite text-pure-white">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-soft-white dark:bg-graphite pt-20 border-b-4 border-graphite dark:border-soft-white">
       {/* Animated background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-graphite via-carbon to-graphite" />
+        <div className="absolute inset-0 bg-transparent" />
         {/* Grid */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.08] dark:opacity-[0.04]"
           style={{
             backgroundImage: `linear-gradient(#38BDF8 1px, transparent 1px), linear-gradient(90deg, #38BDF8 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
+            backgroundSize: "80px 80px",
           }}
         />
         {/* Glowing orb */}
@@ -70,10 +70,10 @@ export function HeroSection() {
               y: [0, -6, 0],
             }}
             transition={{ duration: 4, repeat: Infinity, repeatType: "reverse", delay: item.delay }}
-            className="bg-pure-white/5 backdrop-blur-md border border-pure-white/10 rounded-xl px-4 py-3 shadow-xl"
+            className="block-card px-6 py-4 bg-pure-white dark:bg-carbon"
           >
-            <div className="text-xl font-bold text-electric-blue">{item.label}</div>
-            <div className="text-xs text-soft-white/60 mt-0.5">{item.sub}</div>
+            <div className="text-2xl font-black text-primary-blue dark:text-electric-blue">{item.label}</div>
+            <div className="text-sm font-bold text-graphite/60 dark:text-soft-white/60 mt-1 uppercase tracking-wider">{item.sub}</div>
           </motion.div>
         </motion.div>
       ))}
@@ -86,7 +86,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 bg-primary-blue/10 border border-primary-blue/30 rounded-full px-4 py-1.5 text-xs font-semibold text-electric-blue mb-8"
+            className="inline-flex items-center gap-2 bg-electric-blue border-3 border-graphite dark:border-soft-white px-5 py-2 text-sm font-black text-graphite dark:text-graphite uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] dark:shadow-[4px_4px_0px_0px_rgba(248,250,252,1)] mb-8"
           >
             <Zap className="w-3 h-3" />
             {locale === "en"
@@ -99,7 +99,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.05] tracking-tight mb-6"
+            className="text-5xl sm:text-7xl lg:text-[5.5rem] font-black leading-[1.1] tracking-tight mb-8 text-graphite dark:text-soft-white uppercase"
           >
             {locale === "en" ? (
               <>
@@ -123,7 +123,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-lg sm:text-xl text-soft-white/60 leading-relaxed mb-10 max-w-2xl mx-auto"
+            className="text-xl sm:text-2xl text-industrial-gray dark:text-light-gray leading-relaxed mb-12 max-w-3xl mx-auto font-medium"
           >
             {locale === "en"
               ? "High-performance plastic products engineered for manufacturing, packaging, construction, logistics and everyday applications."
@@ -137,22 +137,13 @@ export function HeroSection() {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Button variant="electric" size="lg" asChild className="w-full sm:w-auto group min-w-[180px]">
-              <Link href="/products">
+            <Link href="/products" className="block-btn-primary px-8 py-4 flex items-center justify-center w-full sm:w-auto text-lg">
                 {locale === "en" ? "Explore Products" : "استكشف المنتجات"}
                 <ArrowRight className={`ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform ${isRtl ? "rotate-180 mr-2 ml-0" : ""}`} />
               </Link>
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              asChild
-              className="w-full sm:w-auto border-white/20 text-pure-white hover:bg-white/10 hover:border-white/40 min-w-[180px]"
-            >
-              <Link href="/quote">
+            <Link href="/quote" className="px-8 py-4 flex items-center justify-center w-full sm:w-auto text-lg font-black text-graphite dark:text-soft-white border-4 border-graphite dark:border-soft-white uppercase tracking-wider hover:bg-graphite hover:text-soft-white dark:hover:bg-soft-white dark:hover:text-graphite transition-colors">
                 {locale === "en" ? "Request a Quote" : "اطلب عرض سعر"}
               </Link>
-            </Button>
           </motion.div>
         </div>
 

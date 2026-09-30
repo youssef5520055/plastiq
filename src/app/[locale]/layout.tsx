@@ -1,15 +1,15 @@
-import { NextIntlClientProvider } from 'next-intl';
+﻿import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { Inter, IBM_Plex_Sans_Arabic } from 'next/font/google';
+import { Plus_Jakarta_Sans, IBM_Plex_Sans_Arabic } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import '../globals.css';
 import type { Metadata } from 'next';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-sans' });
 const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
   subsets: ['arabic'],
   weight: ['300', '400', '500', '600', '700'],
@@ -39,7 +39,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
-      <body className={`${inter.variable} ${ibmPlexSansArabic.variable} font-sans antialiased bg-soft-white dark:bg-graphite text-graphite dark:text-soft-white flex flex-col min-h-screen`}>
+      <body className={`${plusJakarta.variable} ${ibmPlexSansArabic.variable} font-sans antialiased bg-[var(--background)] text-[var(--foreground)] flex flex-col min-h-screen`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NextIntlClientProvider messages={messages}>
             <Navbar />
@@ -53,3 +53,5 @@ export default async function RootLayout({
     </html>
   );
 }
+
+

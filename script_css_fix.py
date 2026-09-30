@@ -1,4 +1,4 @@
-@import "tailwindcss";
+content = '''@import "tailwindcss";
 
 @theme {
   --color-graphite: #0F172A;
@@ -85,3 +85,7 @@ body {
 }
 .dark .block-btn-primary:hover { box-shadow: 2px 2px 0px 0px #fff; }
 .dark .block-btn-primary:active { box-shadow: 0px 0px 0px 0px #fff; }
+'''
+
+with open('src/app/globals.css', 'w', encoding='utf-8') as f:
+    f.write(content)
